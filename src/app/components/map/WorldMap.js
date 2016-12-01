@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { geoFahey } from 'd3-geo-projection';
+
+import Countries from './Countries';
 import Land from './Land';
 
 
@@ -50,9 +53,12 @@ class WorldMap extends React.Component {
 
         console.log('Map Size: ' + JSON.stringify(size));
 
+        const projection = geoFahey().translate([size.width/2, size.height/2]);
+
         return (
             <svg className="worldmap" height={size.height} width={size.width}>
-                <Land />
+                <Land projection={projection} />
+                <Countries projection={projection} />
             </svg>
         );
     }

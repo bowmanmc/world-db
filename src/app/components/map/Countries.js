@@ -10,7 +10,7 @@ import 'd3-selection-multi';
 
 const MAP_URL = '/world-atlas/50m.json';
 
-class Land extends React.Component {
+class Countries extends React.Component {
 
     constructor(props, context) {
         super(props, context);
@@ -46,17 +46,17 @@ class Land extends React.Component {
         const path = geoPath().projection(projection);
 
         let layer = select(Faux.createElement('g'));
-        layer.attr('class', 'land');
+        layer.attr('class', 'countries');
         layer.insert('path')
-            .datum(topojson.feature(this.state.worldData, this.state.worldData.objects.land))
+            .datum(topojson.feature(this.state.worldData, this.state.worldData.objects.countries))
             .attr('d', path);
 
         return layer.node().toReact();
     }
 }
 
-Land.propTypes = {
+Countries.propTypes = {
     projection: PropTypes.func.isRequired
 };
 
-export default Land;
+export default Countries;
