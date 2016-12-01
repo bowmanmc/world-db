@@ -1,0 +1,23 @@
+//theme 3
+$theme3-gray-dark: #262d37;
+$theme3-gray-light: #bcc4cc;
+$theme3-blue: #b3d1fd;
+$theme3-blue-dark: #3075a6;
+
+$theme-nasic-yellow: #ffd800;
+$theme-nasic-orange: #ff7300;
+
+
+// Prefix all colors for use outside of this file with $clr and with a generic
+// name so we can switch the theme out easily.
+$clr-black: #000000;
+$clr-white: #ffffff;
+
+$clr-dark: $theme3-gray-dark;
+
+$clr-background: $clr-dark;
+$clr-txt: lighten($theme3-gray-light, 20%);
+$clr-highlight: $theme-nasic-yellow;
+
+$clr-links-out: $clr-highlight;
+$clr-links-hover: lighten($clr-links-out, 25%);

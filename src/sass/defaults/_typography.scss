@@ -1,0 +1,20 @@
+$font-stack-headline: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+$font-stack-body: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+html,
+body {
+    font-family: $font-stack-body;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.4em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $font-stack-headline;
+    font-weight: normal;
+    margin: 1.1em 0 0.6em;
+}
