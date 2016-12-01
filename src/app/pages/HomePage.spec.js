@@ -1,7 +1,7 @@
-import React from 'react';
+//import React from 'react';
 import { expect } from 'chai';
 
-import HomePage from './HomePage';
+//import HomePage from './HomePage';
 
 
 describe('<HomePage />', () => {

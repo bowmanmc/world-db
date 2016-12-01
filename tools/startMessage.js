@@ -1,5 +1,7 @@
 import chalk from 'chalk';
 
+/* eslint-disable no-console */
+
 // Generated with http://www.text-image.com/convert/ascii.html
 
 const MSG = `

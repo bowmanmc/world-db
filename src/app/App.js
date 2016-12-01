@@ -1,12 +1,9 @@
 import React, { PropTypes } from 'react';
-import { Link, IndexLink } from 'react-router';
 
-import Navbar from './components/navbar';
 
 const App = (props) => {
     return (
-        <div>
-            <Navbar />
+        <div className="application">
             {props.children}
         </div>
     );

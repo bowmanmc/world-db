@@ -1,12 +1,12 @@
 import React from 'react';
 
+import WorldMap from '../components/map/WorldMap';
+
+
 const HomePage = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <p>
-        It works!
-      </p>
+    <div className="page">
+        <WorldMap />
     </div>
   );
 };

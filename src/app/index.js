@@ -7,7 +7,7 @@ import { Router, browserHistory } from 'react-router';
 //import configureStore from './store/configureStore';
 //import { syncHistoryWithStore } from 'react-router-redux';
 
-import Pages from './pages';
+//import Pages from './pages';
 import routes from './routes';
 //import configureStore from './store/configureStore';
 
