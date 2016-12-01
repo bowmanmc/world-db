@@ -27,5 +27,5 @@ require('../favicon.ico');
 
 ReactDom.render(
     <Router history={browserHistory} routes={routes} />,
-    document.getElementById('app')
+    document.getElementById('application')
 );

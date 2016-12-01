@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 
 const App = (props) => {
     return (
-        <div className="application">
+        <div className="view">
             {props.children}
         </div>
     );

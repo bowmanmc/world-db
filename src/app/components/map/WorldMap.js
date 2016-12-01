@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const MAP_URL = '/world-atlas/50m.json';
 
 class WorldMap extends React.Component {
 
@@ -41,8 +42,14 @@ class WorldMap extends React.Component {
 
     render() {
 
+        const size = {
+            height: this.state.componentSize.height,
+            width: this.state.componentSize.width
+        };
+
         return (
-            <h1>World Map Here</h1>
+            <svg className="worldmap" height={size.height} width={size.width}>
+            </svg>
         );
     }
 }
