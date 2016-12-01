@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const MAP_URL = '/world-atlas/50m.json';
+import Land from './Land';
+
 
 class WorldMap extends React.Component {
 
     constructor(props, context) {
         super(props, context);
 
-        // local state for this component
+        // local state
         this.state = {
             componentSize: {
                 height: 0,
@@ -47,8 +48,11 @@ class WorldMap extends React.Component {
             width: this.state.componentSize.width
         };
 
+        console.log('Map Size: ' + JSON.stringify(size));
+
         return (
             <svg className="worldmap" height={size.height} width={size.width}>
+                <Land />
             </svg>
         );
     }

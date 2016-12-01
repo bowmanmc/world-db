@@ -7,6 +7,8 @@ import { Router, browserHistory } from 'react-router';
 //import configureStore from './store/configureStore';
 //import { syncHistoryWithStore } from 'react-router-redux';
 
+import 'whatwg-fetch'; // fetch polyfill for IE - https://github.com/github/fetch
+
 //import Pages from './pages';
 import routes from './routes';
 //import configureStore from './store/configureStore';
