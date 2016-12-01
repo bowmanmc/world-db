@@ -6,6 +6,18 @@ class WorldMap extends React.Component {
 
     constructor(props, context) {
         super(props, context);
+
+        // local state for this component
+        this.state = {
+            componentSize: {
+                height: 0,
+                width: 0
+            }
+        };
+
+        // fix the this bindings in React + ES6
+        this.setState = this.setState.bind(this);
+        this.updateDimensions = this.updateDimensions.bind(this);
     }
 
     componentDidMount() {

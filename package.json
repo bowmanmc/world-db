@@ -9,7 +9,7 @@
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message remove-dist",
     "start": "npm-run-all --parallel test:watch open:src lint:watch mocks sass:watch",
-    "open:src": "babel-node tools/srcServer.js",
+    "open:src": "babel-node tools/runBrowserSync.js",
     "open:dist": "babel-node tools/distServer.js",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
@@ -53,7 +53,9 @@
     "react-router-redux": "4.0.5",
     "redux": "3.5.2",
     "redux-thunk": "2.1.0",
-    "whatwg-fetch": "^1.0.0"
+    "topojson": "^2.0.0",
+    "whatwg-fetch": "^1.0.0",
+    "world-atlas": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "6.4.0",
