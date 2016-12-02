@@ -1,14 +1,37 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import WorldMap from '../components/map/WorldMap';
+import * as worldDataActions from '../state/actions/worldDataActions';
+import HomePageTemplate from './HomePageTemplate';
 
 
-const HomePage = () => {
-  return (
-    <div className="page">
-        <WorldMap />
-    </div>
-  );
+class HomePage extends React.Component {
+
+    constructor(props, context) {
+        super(props, context);
+    }
+
+    render() {
+        const { worldData } = this.props;
+        return HomePageTemplate(worldData);
+    }
+}
+
+HomePage.PropTypes = {
+    worldData: PropTypes.object.isRequired
 };
 
-export default HomePage;
+function mapStateToProps(state, ownProps) {
+    return {
+        worldData: state.worldData
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(worldDataActions, dispatch)
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

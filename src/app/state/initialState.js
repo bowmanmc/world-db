@@ -1,4 +1,5 @@
 
 export default {
-    user: {}
+    worldData: null,
+    viewSize: null
 };
