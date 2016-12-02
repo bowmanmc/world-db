@@ -8,47 +8,19 @@ import * as topojson from 'topojson-client';
 import 'd3-selection-multi';
 
 
-const MAP_URL = '/world-atlas/50m.json';
-
 class Land extends React.Component {
-
-    constructor(props, context) {
-        super(props, context);
-
-        this.state = {
-            worldData: null
-        };
-
-        // fix the this bindings in React + ES6
-        this.setState = this.setState.bind(this);
-    }
-
-    componentDidMount() {
-        // Load the country data
-        var cmp = this;
-        fetch(MAP_URL).then(function(response) {
-            return response.json();
-        }).then(function(mapdata) {
-            cmp.setState({
-                worldData: mapdata
-            });
-        });
-    }
 
     render() {
 
         const projection = this.props.projection;
-
-        if (!this.state.worldData) {
-            return null; // load countries first
-        }
+        const worldData = this.props.worldData;
 
         const path = geoPath().projection(projection);
 
         let layer = select(Faux.createElement('g'));
         layer.attr('class', 'land');
         layer.insert('path')
-            .datum(topojson.feature(this.state.worldData, this.state.worldData.objects.land))
+            .datum(topojson.feature(worldData, worldData.objects.land))
             .attr('d', path);
 
         return layer.node().toReact();
@@ -56,7 +28,8 @@ class Land extends React.Component {
 }
 
 Land.propTypes = {
-    projection: PropTypes.func.isRequired
+    projection: PropTypes.func.isRequired,
+    worldData: PropTypes.object.isRequired
 };
 
 export default Land;
